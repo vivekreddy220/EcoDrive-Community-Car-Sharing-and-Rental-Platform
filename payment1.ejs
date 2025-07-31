@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment</title>
+  <link rel="stylesheet" href="/css/pay.css">
+</head>
+<body style="background-image: url('/images/paym.jpg');">
+  <h2 class="payment">TOTAL PAYMENT: ₹<%= price %>/–</h2>
+
+  <div class="card">
+    <form method="POST">
+      <h1 class="card__title">Enter Payment Information</h1>
+      <div class="card__row">
+        <div class="card__col">
+          <label class="card__label">Card Number</label>
+          <input class="card__input card__input--large" type="text" name="cardno" placeholder="xxxx-xxxx-xxxx-xxxx" maxlength="16" required />
+        </div>
+        <div class="card__col card__chip">
+          <img src="/images/chip.svg" alt="chip" />
+        </div>
+      </div>
+
+      <div class="card__row">
+        <div class="card__col">
+          <label class="card__label">Expiry Date</label>
+          <input class="card__input" type="text" name="exp" placeholder="xx/xx" maxlength="5" required />
+        </div>
+        <div class="card__col">
+          <label class="card__label">CVV</label>
+          <input class="card__input" type="password" name="cvv" placeholder="xxx" maxlength="3" required />
+        </div>
+        <div class="card__col card__brand"><i id="cardBrand"></i></div>
+      </div>
+
+      <input type="submit" value="PAY NOW" class="pay" />
+      <button class="btn"><a href="/cancel">CANCEL</a></button>
+    </form>
+  </div>
+</body>
+</html>
